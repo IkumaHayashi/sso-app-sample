@@ -9,7 +9,7 @@ export default {
   head: {
     title: 'single-app1',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
@@ -28,6 +28,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {src: '~/plugins/firebase.ts'},
+    {src: '~/plugins/veeValidate.ts'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -47,5 +49,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  router: {
+    middleware: 'authenticated',
+  },
 }
