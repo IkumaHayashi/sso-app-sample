@@ -54,4 +54,6 @@ export default {
   router: {
     middleware: 'authenticated',
   },
+
+ignore: ['.history']
 }
